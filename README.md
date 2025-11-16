@@ -1,59 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# EduCore – Learning Management System (LMS)
 
-## About Laravel
+## Overview
+EduCore is a web-based educational platform built with Laravel 12. It supports Admin, Teacher, and Student roles with secure authentication and role-based permissions.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
+- Admin: Manage courses, teachers, students, categories, and tags
+- Teacher: Manage lessons, assignments, grades, and communicate with students
+- Student: Enroll in courses, view lessons, submit assignments, receive feedback
+- Multi-language support (Arabic/English)
+- Event listeners and email notifications
+- Role-based permissions with Spatie Laravel Permission
+- Token-based authentication with Laravel Sanctum
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies
+- Laravel 12
+- PHP 8.1+
+- MySQL / MariaDB
+- Laravel Sanctum
+- Spatie Laravel Permission
+- Spatie Translatable (Arabic & English)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Database Schema
+- users, teachers, admins, courses, lessons, assignments, submissions, categories, tags
+- Pivot tables: course_tag, course_teacher
+- Soft deletes implemented
 
-## Learning Laravel
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/boushra-mh/EduCore.git
+```
+2. Install dependencies:
+```bash
+composer install
+```
+3. Copy `.env.example` to `.env` and set database credentials
+```bash
+cp .env.example .env
+```
+4. Generate application key:
+```bash
+php artisan key:generate
+```
+5. Run migrations and seeders:
+```bash
+php artisan migrate --seed
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Usage
+- Access Admin, Teacher, and Student dashboards via login
+- Manage courses, lessons, assignments, and users based on roles
+- Multi-language content available for all UI and course information
 
 ## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Follow PSR-12 coding standards
+- Create pull requests for new features or bug fixes
+- Write clean, maintainable, and documented code
 
 ## License
+This project is licensed under the MIT License.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contact
+- Developer: Boushra Al-Mouhammmad
+- Email: boushraalmouhamad@gmail.com
+- GitHub: https://github.com/boushra-mh/EduCore
