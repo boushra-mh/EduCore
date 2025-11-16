@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\CourseLevelEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -17,6 +18,11 @@ class Course extends Model
 'level',
 'price',
 'is_published',
+
+    ];
+    protected $casts=[
+        'is_published' => 'boolean',
+        'level'=>CourseLevelEnum::class,
 
     ];
     public function category()
